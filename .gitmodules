@@ -1,0 +1,4 @@
+[submodule "plugins/gui-core/gui-resources/scripts/js/aloha-editor"]
+	path = plugins/gui-core/gui-resources/scripts/js/aloha-editor
+	url = git@github.com:alohaeditor/Aloha-Editor.git
+	branch = dev-ui-a-la-carte

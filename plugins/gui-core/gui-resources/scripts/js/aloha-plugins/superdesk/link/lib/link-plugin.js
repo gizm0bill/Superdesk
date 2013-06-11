@@ -260,6 +260,16 @@ define( [
             this.subscribeEvents();
             this.bindInteractions();
             
+            if( this.hrefField )
+            {
+                var fg = this.hrefField.foreground;
+                this.hrefField.foreground = function()
+                {
+                    fg.apply(this, arguments);
+                    $(this.getInputElem()).show();
+                }
+            };
+            
             Aloha.bind('aloha-plugins-loaded', function () {
                 that.initSidebar(Aloha.Sidebar.right);
             });
@@ -725,6 +735,7 @@ define( [
             // Chrome and Firefox will not focus the element correctly.
             //this.hrefField.focus();
             
+            console.log(this.hrefField.getInputElem());
             var modal = showLinkModal();
             modal.find('[data-placeholder="link-value"]').html(this.hrefField.getInputElem());
             modal.find('[data-placeholder="link-text"]').html($('<input value="'+linkText+'" />'));

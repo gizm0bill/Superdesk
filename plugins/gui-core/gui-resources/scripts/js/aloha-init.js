@@ -33,7 +33,7 @@ function($)
             },
             waitSeconds: 15,
             context: 'aloha', 
-            baseUrl: config.cjs('aloha/src/lib'),
+            baseUrl: config.cjs('aloha-editor/src/lib'),
             paths:
             {
                 // For the repository browser
@@ -207,18 +207,32 @@ function($)
                 'order': config.cjs('require/order'),
                 'tmpl': config.cjs('require/tmpl'),
                 
-                "superdesk/fix": config.cjs("aloha-plugins/superdesk/fix/lib"),
-                "superdesk/toolbar": config.cjs("aloha-plugins/superdesk/toolbar/lib/toolbar"),
+                /*"superdesk/fix": config.cjs("aloha-plugins/superdesk/fix/lib"),
+                "superdesk/toolbar": config.cjs("aloha-plugins/superdesk/toolbar/lib/toolbar"),*/
                 "superdesk/image": config.cjs("aloha-plugins/superdesk/image/lib/image"),
                 "superdesk/image-plugin": config.cjs("aloha-plugins/superdesk/image/lib/image-plugin"),
-                // TODO move to specific plugin
-                "impl/image": config.guiJs('superdesk/article', 'aloha/image'),
                 
-                "ui/toolbar": config.cjs("aloha-plugins/superdesk/toolbar/lib/toolbar"),
+                
+                /*"ui/toolbar": config.cjs("aloha-plugins/superdesk/toolbar/lib/toolbar"),
                 "toolbar/vendor": config.cjs("aloha-plugins/oer/toolbar/vendor"),
                 "toolbar/css": config.cjs("aloha-plugins/oer/toolbar/css"),
                 "toolbar/nls": config.cjs("aloha-plugins/oer/toolbar/nls"),
-                "toolbar/res": config.cjs("aloha-plugins/oer/toolbar/res")
+                "toolbar/res": config.cjs("aloha-plugins/oer/toolbar/res")*/
+                
+                'ui/ui-plugin': '../plugins/common/ui-a-la-carte/lib/ui-plugin',
+                'ui/component': '../plugins/common/ui-a-la-carte/lib/component',
+                'ui/button'   : '../plugins/common/ui-a-la-carte/lib/button',
+                'ui/toggleButton'   : '../plugins/common/ui-a-la-carte/lib/toggleButton',
+                'ui/port-helper-attribute-field': '../plugins/common/ui-a-la-carte/lib/port-helper-attribute-field',
+                'ui/port-helper-multi-split': '../plugins/common/ui-a-la-carte/lib/port-helper-multi-split',
+                'ui/original-component': '../plugins/common/ui/lib/component',
+                'ui/original-port-helper-attribute-field': '../plugins/common/ui/lib/port-helper-attribute-field',
+                'ui/original-port-helper-multi-split': '../plugins/common/ui/lib/port-helper-multi-split',
+                'ui/original-button': '../plugins/common/ui/lib/button',
+                'ui/original-toggleButton': '../plugins/common/ui/lib/toggleButton',
+                
+                // TODO move to specific plugin
+                "impl/image": config.guiJs('superdesk/article', 'aloha/image')
             }
         }, ['aloha'], function(){ alohaDfd.resolve(Aloha); });
     };
